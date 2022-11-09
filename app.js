@@ -19,6 +19,8 @@ const distance=document.querySelector('.avstånd')
 const maxTemp=document.querySelector('.max-temp')
 const minTemp=document.querySelector('.min-temp')
 const moons=document.querySelector('.måner')
+let fuckMe=false
+
 
 let dataPlanet;
 let solInfo;
@@ -30,7 +32,6 @@ let jupiterInfo;
 let saturnusInfo;
 let uranusInfo;
 let neptunusInfo;
-
 
 
 
@@ -78,14 +79,16 @@ async function getPlanets() {
      }
 
      function moonInfo(planet){
+      var moonsName=[]
       for(let i=0; i<planet.moons.length;i++){
-        let moonsName=planet.moons[i]
-        moons.innerText+=`${moonsName},`
-        
+        moonsName.push(`${planet.moons[i]}`)
       }
-     }
+      moons.innerText=moonsName.toString()
+    }
+      
 
  plantInfo();
+
 
 
 
@@ -96,18 +99,20 @@ async function getPlanets() {
  
 
  })
- jorden.addEventListener('click',()=>{
-  moonInfo(jordenInfo)
-  showDatail(jordenInfo.name,jordenInfo.latinName,jordenInfo.desc,jordenInfo.circumference,jordenInfo.distance,jordenInfo.temp.day,jordenInfo.temp.night)
+ merkurius.addEventListener('click',()=>{
+  showDatail(merkuriusInfo.name,merkuriusInfo.latinName,merkuriusInfo.desc,merkuriusInfo.circumference,merkuriusInfo.distance,merkuriusInfo.temp.day,merkuriusInfo.temp.night)
+
  })
  venus.addEventListener('click',()=>{
   showDatail(venusInfo.name,venusInfo.latinName,venusInfo.desc,venusInfo.circumference,venusInfo.distance,venusInfo.temp.day,venusInfo.temp.night)
   
  })
- merkurius.addEventListener('click',()=>{
-  showDatail(merkuriusInfo.name,merkuriusInfo.latinName,merkuriusInfo.desc,merkuriusInfo.circumference,merkuriusInfo.distance,merkuriusInfo.temp.day,merkuriusInfo.temp.night)
+ jorden.addEventListener('click',()=>{
+  showDatail(jordenInfo.name,jordenInfo.latinName,jordenInfo.desc,jordenInfo.circumference,jordenInfo.distance,jordenInfo.temp.day,jordenInfo.temp.night)
+  moonInfo(jordenInfo);
 
  })
+
  mars.addEventListener('click',()=>{
   moonInfo(marsInfo)
 
