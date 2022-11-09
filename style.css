@@ -1,42 +1,161 @@
-body{
+body,html {
   margin: 0;
   padding: 0;
-  background-color: darkblue;
+  background-color: #101341;
+}
+* {
   box-sizing: border-box;
 }
+
+
+h1{
+  font-family: 'Urbanist', sans-serif;
+
+  text-align: right;
+  font-size: 5rem;
+  color: white;
+}
+h2{
+
+  text-align: right;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #fecf29;
+  letter-spacing: 1rem;
+}
 section{
+  height: auto;
+  width: 100%;
   display: flex;
-justify-content: center; 
-align-items: center;
+  justify-content: center;
+  align-items: center;
+  /* flex-direction: row; */
   
 }
-ul{
+.planeter{
+  list-style: none;
   display: flex;
   flex-direction: row;
-  background-color: beige;
-  margin-top: 300px;
+  justify-content: center;
+  align-items: center;
+  gap: 6rem;
+}
+.planeter li{
+  border-radius: 50%;
+}
+.solen{
+  width: 30rem;
+  height: 30rem;
+  background-color: gold;
+ 
 
 }
-li{
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  list-style: none;
-  background-color: white;
-  border: 2px solid black;
+.merkurius{
+  width: 1rem;
+  height: 1rem;
+  background-color: rgb(134, 134, 134);
 }
+.venus{
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: rgb(238, 212, 178);
+}
+.jorden{
+  width: 1.5rem;
+  height: 1.5em;
+  background-color: lightblue;
+}
+.mars{
+  width: 1rem;
+  height: 1rem;
+  background-color: brown;
+}
+.jupiter{
+  width: 7rem;
+  height: 7rem;
+  background-color: lightsalmon;
+}
+.saturnus{
+  width: 6rem;
+  height: 6rem;
+  background-color: rgba(199,170,114,255);
+}
+.saturnus hr{
+  margin: 3rem auto;
+ transform: rotate(155deg);
+ 
+}
+.uranus{
+  width: 3rem;
+  height: 3rem;
+  background-color: blanchedalmond;
+}
+.neptunus{
+  width: 3rem;
+  height: 3rem;
+  background-color: grey;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 article{
   position: absolute;
   top: 0;
   left: 0;
-  width: 100vw;
+  padding:3rem;
+  width: 100%;
   height: 100vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  gap: 1rem;
+  align-items:center;
   flex-direction: column;
-  background-color: wheat;
+background-color: #0f1342;
+
+}
+article div{
+  display: flex;
+  flex-direction: row;
+  color:white;
+}
+article h1{
+  margin-bottom: 0.5rem;
+}
+article hr{
+  flex-grow: 1;
+}
+p{
+  color: white;
 }
 article.hide{
   display: none;
+}
+article button{
+  margin-top: 10rem;
+  background: none;
+  color:#fecf29;
+  border: 2px solid #fecf29;
+  padding: .5em 1.5em;
+  font-size: 1em;
+  transition: color 0.3s,transform 0.5s;
+
+}
+article button:hover{
+  border-color: #f1ff5c;
+  color: white;
+  transform: translateY(-0.25em);
+  cursor: pointer;
+  box-shadow: 0 0.5em 0.5em -0.4em #f1ff5c;
+
+}
+article button:active{
+  transform: translateY(6px);
 }

@@ -1,20 +1,21 @@
 const BASE_URL = 'https://fathomless-shelf-54969.herokuapp.com';
 const data=''
-const solen=document.querySelector('.Solen');
-const jorden=document.querySelector('.Jorden')
-const venus=document.querySelector('.Venus')
-const merkurius=document.querySelector('.Merkurius')
-const mars=document.querySelector('.Mars')
-const jupiter=document.querySelector('.Jupiter')
-const saturnus=document.querySelector('.Saturnus')
-const uranus=document.querySelector('.Uranus')
-const neptunus=document.querySelector('.Neptunus')
+const solen=document.querySelector('.solen');
+const merkurius=document.querySelector('.merkurius')
+const venus=document.querySelector('.venus')
+const jorden=document.querySelector('.jorden')
+const mars=document.querySelector('.mars')
+const jupiter=document.querySelector('.jupiter')
+const saturnus=document.querySelector('.saturnus')
+const uranus=document.querySelector('.uranus')
+const neptunus=document.querySelector('.neptunus')
 const article=document.querySelector('article')
+const btn=document.querySelector('button')
 let dataPlanet;
 let solInfo;
-let jordenInfo;
-let venusInfo;
 let merkuriusInfo;
+let venusInfo;
+let jordenInfo;
 let marsInfo;
 let jupiterInfo;
 let saturnusInfo;
@@ -41,9 +42,9 @@ async function getPlanets() {
       console.log(dataPlanet)
 
       solInfo=dataPlanet.bodies[0]
-      jordenInfo=dataPlanet.bodies[1]
+      merkuriusInfo=dataPlanet.bodies[1]
       venusInfo=dataPlanet.bodies[2]
-      merkuriusInfo=dataPlanet.bodies[3]
+      jordenInfo=dataPlanet.bodies[3]
       marsInfo=dataPlanet.bodies[4]
       jupiterInfo=dataPlanet.bodies[5]
       saturnusInfo=dataPlanet.bodies[6]
@@ -83,6 +84,9 @@ async function getPlanets() {
  neptunus.addEventListener('click',()=>{
   article.classList.toggle('hide')
   console.log("ayri")
+ })
+ btn.addEventListener('click',()=>{
+  article.classList.toggle('hide')
  })
 
 
