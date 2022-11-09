@@ -11,6 +11,15 @@ const uranus=document.querySelector('.uranus')
 const neptunus=document.querySelector('.neptunus')
 const article=document.querySelector('article')
 const btn=document.querySelector('button')
+const p=document.querySelector('p')
+const h1=document.querySelector('.name')
+const latin=document.querySelector('.latin')
+const perimeter=document.querySelector('.omkrets')
+const distance=document.querySelector('.avstånd')
+const maxTemp=document.querySelector('.max-temp')
+const minTemp=document.querySelector('.min-temp')
+const moons=document.querySelector('.måner')
+
 let dataPlanet;
 let solInfo;
 let merkuriusInfo;
@@ -21,6 +30,7 @@ let jupiterInfo;
 let saturnusInfo;
 let uranusInfo;
 let neptunusInfo;
+
 
 
 
@@ -54,39 +64,86 @@ async function getPlanets() {
 
     }
 
+    function showDatail(planetName,latinName,description,Perimeter,Distance,MinTemp,MaxTemp){
+      article.classList.toggle('hide')
+      h1.innerText=planetName
+      latin.innerText=latinName
+      p.innerText=description
+      perimeter.innerText=`${Perimeter} Km`
+      distance.innerText=`${Distance} Km`
+      minTemp.innerText=`${MinTemp} C`
+      maxTemp.innerText= `${MaxTemp} C`
+     
+      
+     }
+
+     function moonInfo(planet){
+      for(let i=0; i<planet.moons.length;i++){
+        let moonsName=planet.moons[i]
+        moons.innerText+=`${moonsName},`
+        
+      }
+     }
+
  plantInfo();
+
+
+
+ 
+ solen.addEventListener('click',()=>{
+  
+  showDatail(solInfo.name,solInfo.latinName,solInfo.desc,solInfo.circumference,solInfo.distance,solInfo.temp.day,solInfo.temp.night)
  
 
- solen.addEventListener('click',()=>{
-  console.log(`description: ${solInfo.desc} namn: ${solInfo.name}`)
  })
  jorden.addEventListener('click',()=>{
-  console.log(`description: ${jordenInfo.desc} namn: ${solInfo.name}`)
+  moonInfo(jordenInfo)
+  showDatail(jordenInfo.name,jordenInfo.latinName,jordenInfo.desc,jordenInfo.circumference,jordenInfo.distance,jordenInfo.temp.day,jordenInfo.temp.night)
  })
  venus.addEventListener('click',()=>{
-  console.log(`description: ${venusInfo.desc} namn: ${solInfo.name}`)
+  showDatail(venusInfo.name,venusInfo.latinName,venusInfo.desc,venusInfo.circumference,venusInfo.distance,venusInfo.temp.day,venusInfo.temp.night)
+  
  })
  merkurius.addEventListener('click',()=>{
-  console.log(`description: ${merkuriusInfo.desc} namn: ${solInfo.name}`)
+  showDatail(merkuriusInfo.name,merkuriusInfo.latinName,merkuriusInfo.desc,merkuriusInfo.circumference,merkuriusInfo.distance,merkuriusInfo.temp.day,merkuriusInfo.temp.night)
+
  })
  mars.addEventListener('click',()=>{
-  console.log(`description: ${marsInfo.desc} namn: ${solInfo.name}`)
+  moonInfo(marsInfo)
+
+  
+  showDatail(marsInfo.name,marsInfo.latinName,marsInfo.desc,marsInfo.circumference,marsInfo.distance,marsInfo.temp.day,marsInfo.temp.night)
+
  })
  jupiter.addEventListener('click',()=>{
-  console.log(`description: ${jupiterInfo.desc} namn: ${solInfo.name}`)
+  moonInfo(jupiterInfo)
+  showDatail(jupiterInfo.name,jupiterInfo.latinName,jupiterInfo.desc,jupiterInfo.circumference,jupiterInfo.distance,jupiterInfo.temp.day,jupiterInfo.temp.night)
+ 
+
+
  })
  saturnus.addEventListener('click',()=>{
-  console.log(`description: ${saturnusInfo.desc} namn: ${solInfo.name}`)
+  moonInfo(saturnusInfo)
+  showDatail(saturnusInfo.name,saturnusInfo.latinName,saturnusInfo.desc,saturnusInfo.circumference,saturnusInfo.distance,saturnusInfo.temp.day,saturnusInfo.temp.night)
+
  })
  uranus.addEventListener('click',()=>{
-  console.log(`description: ${uranusInfo.desc} namn: ${solInfo.name}`)
+  moonInfo(saturnusInfo)
+  showDatail(uranusInfo.name,uranusInfo.latinName,uranusInfo.desc,uranusInfo.circumference,uranusInfo.distance,uranusInfo.temp.day,uranusInfo.temp.night)
+
+
  })
  neptunus.addEventListener('click',()=>{
-  article.classList.toggle('hide')
-  console.log("ayri")
+  moonInfo(neptunusInfo)
+  showDatail(neptunusInfo.name,neptunusInfo.latinName,neptunusInfo.desc,neptunusInfo.circumference,neptunusInfo.distance,neptunusInfo.temp.day,neptunusInfo.temp.night)
+  
+
  })
+
  btn.addEventListener('click',()=>{
   article.classList.toggle('hide')
+
+
  })
 
 
