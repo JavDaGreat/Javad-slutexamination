@@ -19,8 +19,6 @@ const distance=document.querySelector('.avstånd')
 const maxTemp=document.querySelector('.max-temp')
 const minTemp=document.querySelector('.min-temp')
 const moons=document.querySelector('.måner')
-let fuckMe=false
-
 
 let dataPlanet;
 let solInfo;
@@ -32,7 +30,6 @@ let jupiterInfo;
 let saturnusInfo;
 let uranusInfo;
 let neptunusInfo;
-
 
 
 async function getPlanets() {
@@ -47,25 +44,27 @@ async function getPlanets() {
     }
 
 
-    async function plantInfo ()
-{
-      await getPlanets();
-      console.log(dataPlanet)
+    
+    
+    
+async function plantInfo (){
+    await getPlanets();
+    console.log(dataPlanet)
 
-      solInfo=dataPlanet.bodies[0]
-      merkuriusInfo=dataPlanet.bodies[1]
-      venusInfo=dataPlanet.bodies[2]
-      jordenInfo=dataPlanet.bodies[3]
-      marsInfo=dataPlanet.bodies[4]
-      jupiterInfo=dataPlanet.bodies[5]
-      saturnusInfo=dataPlanet.bodies[6]
-      uranusInfo=dataPlanet.bodies[7]
-      neptunusInfo=dataPlanet.bodies[8]
-
-
+    solInfo=dataPlanet.bodies[0]
+    merkuriusInfo=dataPlanet.bodies[1]
+    venusInfo=dataPlanet.bodies[2]
+    jordenInfo=dataPlanet.bodies[3]
+    marsInfo=dataPlanet.bodies[4]
+    jupiterInfo=dataPlanet.bodies[5]
+    saturnusInfo=dataPlanet.bodies[6]
+    uranusInfo=dataPlanet.bodies[7]
+    neptunusInfo=dataPlanet.bodies[8]
     }
 
-    function showDatail(planetName,latinName,description,Perimeter,Distance,MinTemp,MaxTemp){
+    function showDatail(planetName,latinName,description,
+      Perimeter,Distance,MinTemp,MaxTemp){
+
       article.classList.toggle('hide')
       h1.innerText=planetName
       latin.innerText=latinName
@@ -74,8 +73,7 @@ async function getPlanets() {
       distance.innerText=`${Distance} Km`
       minTemp.innerText=`${MinTemp} C`
       maxTemp.innerText= `${MaxTemp} C`
-     
-      
+   
      }
 
      function moonInfo(planet){
