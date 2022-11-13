@@ -10,6 +10,7 @@ const saturnus=document.querySelector('.saturnus')
 const uranus=document.querySelector('.uranus')
 const neptunus=document.querySelector('.neptunus')
 const article=document.querySelector('article')
+const section=document.querySelector('section')
 const btn=document.querySelector('button')
 const p=document.querySelector('p')
 const h1=document.querySelector('.name')
@@ -66,6 +67,8 @@ async function plantInfo (){
       Perimeter,Distance,MinTemp,MaxTemp){
 
       article.classList.toggle('hide')
+      section.classList.toggle('hide')
+      
       h1.innerText=planetName
       latin.innerText=latinName
       p.innerText=description
@@ -77,7 +80,7 @@ async function plantInfo (){
      }
 
      function moonInfo(planet){
-      var moonsName=[]
+      let moonsName=[]
       for(let i=0; i<planet.moons.length;i++){
         moonsName.push(`${planet.moons[i]}`)
       }
@@ -92,29 +95,32 @@ async function plantInfo (){
 
  
  solen.addEventListener('click',()=>{
-  
+  moonInfo(solInfo);
   showDatail(solInfo.name,solInfo.latinName,solInfo.desc,solInfo.circumference,solInfo.distance,solInfo.temp.day,solInfo.temp.night)
  
 
  })
  merkurius.addEventListener('click',()=>{
+  moonInfo(markutiusInfo);
   showDatail(merkuriusInfo.name,merkuriusInfo.latinName,merkuriusInfo.desc,merkuriusInfo.circumference,merkuriusInfo.distance,merkuriusInfo.temp.day,merkuriusInfo.temp.night)
+
+  
 
  })
  venus.addEventListener('click',()=>{
+  moonInfo(venusInfo);
   showDatail(venusInfo.name,venusInfo.latinName,venusInfo.desc,venusInfo.circumference,venusInfo.distance,venusInfo.temp.day,venusInfo.temp.night)
   
  })
  jorden.addEventListener('click',()=>{
-  showDatail(jordenInfo.name,jordenInfo.latinName,jordenInfo.desc,jordenInfo.circumference,jordenInfo.distance,jordenInfo.temp.day,jordenInfo.temp.night)
   moonInfo(jordenInfo);
+  showDatail(jordenInfo.name,jordenInfo.latinName,jordenInfo.desc,jordenInfo.circumference,jordenInfo.distance,jordenInfo.temp.day,jordenInfo.temp.night)
+  
 
  })
 
  mars.addEventListener('click',()=>{
   moonInfo(marsInfo)
-
-  
   showDatail(marsInfo.name,marsInfo.latinName,marsInfo.desc,marsInfo.circumference,marsInfo.distance,marsInfo.temp.day,marsInfo.temp.night)
 
  })
@@ -131,7 +137,7 @@ async function plantInfo (){
 
  })
  uranus.addEventListener('click',()=>{
-  moonInfo(saturnusInfo)
+  moonInfo(uranusInfo)
   showDatail(uranusInfo.name,uranusInfo.latinName,uranusInfo.desc,uranusInfo.circumference,uranusInfo.distance,uranusInfo.temp.day,uranusInfo.temp.night)
 
 
@@ -145,8 +151,7 @@ async function plantInfo (){
 
  btn.addEventListener('click',()=>{
   article.classList.toggle('hide')
-
-
+  section.classList.toggle('hide')
  })
 
 
