@@ -3,6 +3,10 @@ body,html {
   padding: 0;
   background-color: #101341;
 }
+
+html{
+  width: 100vw;
+}
 * {
   box-sizing: border-box;
 }
@@ -112,17 +116,17 @@ section.hide{
 article{
   position: absolute;
   top: 0;
-  width: 100%;
+  width: 100vw;
   max-height: auto;
   display: flex;
   gap: 1rem;
   align-items:center;
   flex-direction: column;
-background-color:#101341;
+ background-color:#101341;
 
 }
 article div{
-  width: 40rem;
+  max-width: 40rem;
   display: flex;
   flex-direction: row;
   color:white;
@@ -159,9 +163,9 @@ hr{
 }
 
 p{
-  width: 50rem;
   color: white;
   line-height: 2rem;
+  padding: 1rem;
 }
 article.hide{
   display: none;

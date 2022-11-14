@@ -84,7 +84,7 @@ async function planetInfo (){
       for(let i=0; i<planet.moons.length;i++){
         moonsName.push(`${planet.moons[i]}`)
       }
-      moons.innerText=moonsName.toString()
+      moons.innerText=moonsName.join(', ')
     }
       
 
