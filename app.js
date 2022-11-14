@@ -48,7 +48,7 @@ async function getPlanets() {
     
     
     
-async function plantInfo (){
+async function planetInfo (){
     await getPlanets();
     console.log(dataPlanet)
 
@@ -88,7 +88,7 @@ async function plantInfo (){
     }
       
 
- plantInfo();
+ planetInfo();
 
 
 
@@ -101,7 +101,7 @@ async function plantInfo (){
 
  })
  merkurius.addEventListener('click',()=>{
-  moonInfo(markutiusInfo);
+  moonInfo(merkuriusInfo);
   showDatail(merkuriusInfo.name,merkuriusInfo.latinName,merkuriusInfo.desc,merkuriusInfo.circumference,merkuriusInfo.distance,merkuriusInfo.temp.day,merkuriusInfo.temp.night)
 
   
