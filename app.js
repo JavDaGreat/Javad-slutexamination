@@ -1,5 +1,4 @@
 const BASE_URL = 'https://fathomless-shelf-54969.herokuapp.com';
-const data=''
 const solen=document.querySelector('.solen');
 const merkurius=document.querySelector('.merkurius')
 const venus=document.querySelector('.venus')
@@ -26,7 +25,6 @@ let solInfo;
 let merkuriusInfo;
 let venusInfo;
 let jordenInfo;
-let marsInfo;
 let jupiterInfo;
 let saturnusInfo;
 let uranusInfo;
@@ -64,7 +62,7 @@ async function planetInfo (){
     }
 
     function showDatail(planetName,latinName,description,
-      Perimeter,Distance,MinTemp,MaxTemp){
+      Perimeter,Distance,MinTemp,MaxTemp,moonsName){
 
       article.classList.toggle('hide')
       section.classList.toggle('hide')
@@ -76,75 +74,73 @@ async function planetInfo (){
       distance.innerText=`${Distance} Km`
       minTemp.innerText=`${MinTemp} C`
       maxTemp.innerText= `${MaxTemp} C`
+      moons.innerText=moonsName.join(', ')
    
      }
 
-     function moonInfo(planet){
-      let moonsName=[]
-      for(let i=0; i<planet.moons.length;i++){
-        moonsName.push(`${planet.moons[i]}`)
-      }
-      moons.innerText=moonsName.join(', ')
-    }
-      
-
+    
  planetInfo();
 
-
-
-
- 
  solen.addEventListener('click',()=>{
-  moonInfo(solInfo);
-  showDatail(solInfo.name,solInfo.latinName,solInfo.desc,solInfo.circumference,solInfo.distance,solInfo.temp.day,solInfo.temp.night)
+  
+  showDatail(solInfo.name,solInfo.latinName,solInfo.desc,solInfo.circumference,
+    solInfo.distance,solInfo.temp.day,solInfo.temp.night,solInfo.moons)
  
 
  })
  merkurius.addEventListener('click',()=>{
-  moonInfo(merkuriusInfo);
-  showDatail(merkuriusInfo.name,merkuriusInfo.latinName,merkuriusInfo.desc,merkuriusInfo.circumference,merkuriusInfo.distance,merkuriusInfo.temp.day,merkuriusInfo.temp.night)
+ 
+  showDatail(merkuriusInfo.name,merkuriusInfo.latinName,merkuriusInfo.desc,merkuriusInfo.circumference,merkuriusInfo.distance,
+    merkuriusInfo.temp.day,merkuriusInfo.temp.night,merkuriusInfo.moons)
 
   
 
  })
  venus.addEventListener('click',()=>{
-  moonInfo(venusInfo);
-  showDatail(venusInfo.name,venusInfo.latinName,venusInfo.desc,venusInfo.circumference,venusInfo.distance,venusInfo.temp.day,venusInfo.temp.night)
+ 
+  showDatail(venusInfo.name,venusInfo.latinName,venusInfo.desc,venusInfo.circumference,venusInfo.distance,
+    venusInfo.temp.day,venusInfo.temp.night,venusInfo.moons)
   
  })
  jorden.addEventListener('click',()=>{
-  moonInfo(jordenInfo);
-  showDatail(jordenInfo.name,jordenInfo.latinName,jordenInfo.desc,jordenInfo.circumference,jordenInfo.distance,jordenInfo.temp.day,jordenInfo.temp.night)
+  
+  showDatail(jordenInfo.name,jordenInfo.latinName,jordenInfo.desc,jordenInfo.circumference,jordenInfo.distance,
+    jordenInfo.temp.day,jordenInfo.temp.night,jordenInfo.moons)
   
 
  })
 
  mars.addEventListener('click',()=>{
-  moonInfo(marsInfo)
-  showDatail(marsInfo.name,marsInfo.latinName,marsInfo.desc,marsInfo.circumference,marsInfo.distance,marsInfo.temp.day,marsInfo.temp.night)
+
+  showDatail(marsInfo.name,marsInfo.latinName,marsInfo.desc,marsInfo.circumference,marsInfo.distance,
+    marsInfo.temp.day,marsInfo.temp.night,marsInfo.moons)
 
  })
  jupiter.addEventListener('click',()=>{
-  moonInfo(jupiterInfo)
-  showDatail(jupiterInfo.name,jupiterInfo.latinName,jupiterInfo.desc,jupiterInfo.circumference,jupiterInfo.distance,jupiterInfo.temp.day,jupiterInfo.temp.night)
+  
+  showDatail(jupiterInfo.name,jupiterInfo.latinName,jupiterInfo.desc,jupiterInfo.circumference,jupiterInfo.distance,
+    jupiterInfo.temp.day,jupiterInfo.temp.night,jupiterInfo.moons)
  
 
 
  })
  saturnus.addEventListener('click',()=>{
-  moonInfo(saturnusInfo)
-  showDatail(saturnusInfo.name,saturnusInfo.latinName,saturnusInfo.desc,saturnusInfo.circumference,saturnusInfo.distance,saturnusInfo.temp.day,saturnusInfo.temp.night)
+
+  showDatail(saturnusInfo.name,saturnusInfo.latinName,saturnusInfo.desc,saturnusInfo.circumference,saturnusInfo.distance,
+    saturnusInfo.temp.day,saturnusInfo.temp.night,saturnusInfo.moons)
 
  })
  uranus.addEventListener('click',()=>{
-  moonInfo(uranusInfo)
-  showDatail(uranusInfo.name,uranusInfo.latinName,uranusInfo.desc,uranusInfo.circumference,uranusInfo.distance,uranusInfo.temp.day,uranusInfo.temp.night)
+
+  showDatail(uranusInfo.name,uranusInfo.latinName,uranusInfo.desc,uranusInfo.circumference,uranusInfo.distance,
+    uranusInfo.temp.day,uranusInfo.temp.night,uranusInfo.moons)
 
 
  })
  neptunus.addEventListener('click',()=>{
-  moonInfo(neptunusInfo)
-  showDatail(neptunusInfo.name,neptunusInfo.latinName,neptunusInfo.desc,neptunusInfo.circumference,neptunusInfo.distance,neptunusInfo.temp.day,neptunusInfo.temp.night)
+
+  showDatail(neptunusInfo.name,neptunusInfo.latinName,neptunusInfo.desc,neptunusInfo.circumference,neptunusInfo.distance,
+    neptunusInfo.temp.day,neptunusInfo.temp.night,neptunusInfo.moons)
   
 
  })
