@@ -44,7 +44,7 @@ async function getPlanets() {
 
 
     
-    
+    console.log(dataPlanet)
     
 async function planetInfo (){
     await getPlanets();
@@ -62,7 +62,7 @@ async function planetInfo (){
     }
 
     function showDatail(planetName,latinName,description,
-      Perimeter,Distance,MinTemp,MaxTemp,moonsName){
+      circumference,Distance,MinTemp,MaxTemp,moonsName){
 
       article.classList.toggle('hide')
       section.classList.toggle('hide')
@@ -70,7 +70,7 @@ async function planetInfo (){
       h1.innerText=planetName
       latin.innerText=latinName
       p.innerText=description
-      perimeter.innerText=`${Perimeter} Km`
+      perimeter.innerText=`${circumference} Km`
       distance.innerText=`${Distance} Km`
       minTemp.innerText=`${MinTemp} C`
       maxTemp.innerText= `${MaxTemp} C`
