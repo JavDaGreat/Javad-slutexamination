@@ -125,12 +125,13 @@ article{
 
 }
 article div{
-  max-width: 40rem;
+ width: 100vw;
   display: flex;
   flex-direction: row;
   color:white;
-  justify-content: space-between;
+  justify-content:space-around;
   align-items: center;
+  
 
 }
 
